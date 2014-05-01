@@ -1,0 +1,292 @@
+01-05-2014
+Xong quảng cáo, giờ chỉ vào Setting sửa link là xong. Cập nhật source mới nhất tại:
+Project Chung\04_Sourcecode\Java( project GUI ) 
+
+------------------------
+16-04-2014
+
+Luu y quan trong: Truoc khi thuc hien ban ky 1 tac dong nao khac su dung den chilkat,, phai close all connection truoc.
+______
+15-04-2014
+
+Update class Gg.java
+Fix ham prepareLogin
+bo tay voi truong hop security = high
+//return 3 = High security
+Update class Login.java trong packet Thread
+Update function loginGG, them cac truong hop vua update o class Gg
+______________
+13-04-2014
+Update class Facebook.java
+//Update function shareFacebook
+
+Them ham shareYoutubeOnFacebook, ham nay danh rieng cho admin xai. Dung de share youtube video len facebook
+
+________________
+12-04-2014
+Update class Gg.java
+
+Fix ham prepareLogin
+//Update truong hop Login bi High Priority cookie.
+
+___________
+09-04-2014
+
+Update Class Gg.java
+
+//Ham prepare Login
+//return 1 = thanh cong, 0 = that bai
+// return -1 = rot mang, 2 = chua tao channel
+update function prepareLogin, kiem tra truong hop user chua tao channel
+
+//Ham Log in google
+//return 1 = thanh cong, 0 = that bai
+// return -1 = rot mang, 2 = chua tao channel	
+update function login, return int thay vi boolean
+
+Update class Login.java trong packet Thread
+Update function loginGG, them cac truong hop vua update o class Gg
+
+_______________________________
+06-04-2014
++ Add 5 API. Xem chi tiet trong API.xlsx
++ Crontab: check update status online (10th every ten minutes <means: once every one minute :)) >) => Done.
+------------------------
+03-04-2014
+http://api.only4free.net/ : activated.
+-----------------
+02-04-2014
+up api len server
+ps: khong chay crontab dc. bao loi ko co quyen gi a'.
+command: crontab -l
+------------
+01-04-2014
+Chep toan bo GUI( vi co 1 so thu vien moi)
++ remove javafx ( rờm ra, không cần cài soft lib cho nó nữa )
++ add jwebbrowser
++ xu ly click quang cao 1 lan, sau do moi su dung dc chuc nang.
+p/s: do xung 32 và 64, nên khi chạy thì cần add và remove lib sau.
+	+ 32: remove swt.jar. add thằng swt32.jar
+	+ 64: remove swt32.jar. add thằng swt.jar
+	+ 32 va 64 đều đã có trong thư mục GUI/lib.
+	
+Start bằng file start.java ( src/GUI/start.java )	
+--------------------
+17-03-2014
+Them giao dien login.java trong GUI package
+Muc tieu : add them model site main. viet 1 ham.
++ login
+
+- dang ky thi webview, dang ky truc tiep site
+- forgot thi webview.
+da gan' link. co the test.
+chi can thay link
+________________
+16-03-2014
+Update confirm
+__________________________
+14:21	15-03-2014
+
+Updated class LikeViet
+Fix ham cheatTimeViewVideo : chi can truyen idVideoLikeViet
+// Ham cheatTimeViewVideo
+// Ham nay thuc chat chi truy cap link cua like viet: http://likeviet.com.vn/p.php?p=youtube&vid=220 
+// Sau do sleep 13s
+
+Fix ham verifyViewVideo : chi can truyen idVideoLikeViet
+
+*****************
+Updated class autogg
+Fix: int rs = lv.verifyViewVideo(String.valueOf(id)); Chi can truyen vao idVideoLikeViet
+
+Test thanh cong chuc nang auto View Youtube: simple + GUI
+
+*****************
+Update class auto gg.
+Fix ham plus. Ly do click vao nut plus, nut bi disable xong rui sang lai ngay la tai khang dia. Khang dia copy ham nay cua likeFanpage, dem len lam plus ma fix chua het. Nhung cho sai:
+
+			String link = "/p.php?p=google";
+			String siteCheck = "/system/modules/ylike/process.php";		=> String siteCheck = "/system/modules/google/process.php";  Vay moi dung.
+
+Cho sai thu 2:
+			
+			this.sites = lv.getLinkFan_Photo(link);	Cai nay la get link Photo ma khang dia T_T
+			Fix lai: this.sites = lv.getPlusLink(link);
+
+Fix xong chay pha` pha`` =)). Khang dia ga vl T_T.
+
+*****************
+Update class facebook
+
+Fix ham subscribeUnsubscribe	: Bat loi~~ truong hop user facebook đã bị xóa hoặc không tồn tại
+// like Subscribe_UnSubscribe Facebook
+// return -1 = rot mang; 0 = failed; 1 = thanh cong; 2 = Facebook user da bi xoa hoac Facebook update
+
+Update class autofb	: Muc dich anh update cho truong hop return gia tri 2. Nhung hinh nhu anh update khong hieu qua.
+
+else if (rs == 2){
+	this.main.updateRecord(row, 6,
+	"Skip. Lỗi (Trang bạn yêu cầu không tồn tại hoặc Facebook, Google vừa update. Vui lòng chờ bản cập nhật)");
+	this.skip(row, site.get("id"), "Lỗi (Facebook Update)");
+						
+Khang dia xem cai doan nay cua anh rui tim cho nao dung rui fix giup anh nhe.
+
+
+Update class autofb
+
+Fix doan ma sau:
+case "share":
+					rsUn = fb.likeUnlikeFanPage(site.get("link"), false);
+					
+Doan ma nay sai. Truong hop share thi khong co unlike hay gi ca. NO dan den loi se return -1 ngoai y muon. Do do khi nhan share, chuong trinh no bao la network error la vi the.
+Anh xoa luon doan ma nay roi					
+
+***************
+Anh phat hien mot bug ma khong biet tai sao xay ra. do la khi log in google hoac facebook. Log in thanh cong, ma khong hien thi may cai nut chuc nang. Phai log out ra, log in lai. Nhieu khi log vai lan moi thay
+
+*************
+Fix xong toan bo chuc nang. Test chạy fa fa. 		
+
+
+*****************
+Update class facebook
+Fix ham likeUnlikeFanPage
+// Ham likeUnlikeFanpage
+// return -1 = rot mang, 1 =thanh cong, 0 = that bai, 2 = Bi block tam thoi			
+
+
+Them ham confirmLikeFacebook
+// Ham confirmLikeFacebook
+	// return -1 = rot mang, 1 = thanh cong, 0 = that bai
+	// Truong hop bi block, confirm khong thanh cong tuc la bi block hoan toan facebook và facebook bắt ngưng mấy ngày. Cái này do ăn ở. 
+//	Hiển thị thông báo với người sử dụng là dùng account facebook khác là vừa		
+__________
+15-03-2014 
+Copy toan bo src cua em qua di. vi hoi` nay~ em copy toan bo cua a qua de gan' action.
+trong likeviet co demo for list . tra ve id va coin v.v... cho ca PLUS LIST va VIEW VIDEO LIST. 
+con action xu ly nam trong package Thread. 
+-file autogg => xu toan bo google ( tru truong hop view video, vi ham viet ben likeviet, nhung lai bat qua action tren gui cua google.)
+-file autofb => xu toan bo facebook
+-file autolv => xu toan bo likeviet
+-ten ham ghi dung y nghia thuc hien. search theo y nghia. plus thi search plus. photo thi search photo.v.v....
++ view thi trong ham view().
++ plus thi trong ham plus()
+__________
+14-03-2014
+xu ly xong action plus
+dua view youtube vao giao dien. nhung ko hieu sao ko chay dc. test simple thi duoc. a vao thread-> autogg. tim ham view(). test dum em.
+______________
+10:39 PM 13-03-2014
+
+Phục hồi lại hàm autoview youtube (Update ngày 08-03-2014)
+
+
+____________
+12-03-2014
+
+Lưu ý: Trong class likeviet anh lấy từ Source của em hình như em chưa có cập nhật mấy cái hàm anh viết cho phần auto view youtube. Em nhớ backup lại nhé. Kẻo mất phải viết lại
+
+Update class LikeViet
+Thêm hàm getPlusLink	=> Return lại 1 cái list (Copy y chang của em, chỉ fix lại pattern). Test thì a chưa biết cách test thôi =))
+// Ham getPlusLink
+// Link get can truyen vao: /p.php?p=google
+
+Anh vừa phát hiện một bug cực kỳ lớn của mấy trang trao đổi như vầy. Thực chất phần Google+ có cũng như không. Vì tụi nó cũng không thể kiểm tra được thông tin của Google +.Cũng như xác định được là có +1 hay chưa :D.
+Nói nôm na là với LikeViet, mình không cần phải +1 gì cả. Chỉ cần post gói tin lên lấy điểm thôi.
+Haizzz.
+Do đó, chức năng G+ trong LikeViet,mình chỉ cần làm như sau:
+
+getPlusLink
+verifySecond
+
+VerifySecond của Google có hơi khác biệt xíu. Respond trả về như sau:
+SUCCESS! You have received 1 coins!
+
+Nếu Failed sẽ trả về null
+
+Thêm hàm verifySecondGooglePlus
+//Ham verifySecondGooglePlus
+//Truyen vao id Link tren likeviet
+
+______
+11-03-2014
+
+van de tondong: Theo nguyen tac url se khong tinh dau #
+https://m.facebook.com/?_rdr#!/photo.php?fbid=271331936359364&id=100004476792730&set=a.106032686222624.14870.100004476792730&source=43
+
+Phai loai het tu phan # tro ve sau. Fanpage phai loc ngay cho~ nay truoc khi like. cai nay danh cho tat ca cac loai url Anh chua biet loc cho nao :D
+
+
+Update class LikeViet:
+
+Sua ham verifyFirst: Them truong boolean isFanpage vao trong doi so truyen vao
+Anh da fix luon trong file autofb.java de test
+public boolean verifyFirst(String siteCheck, String refer, String link,
+			String id, boolean isFanpage)
+			
+Sua ham verifySecond : Sua loi vong lap vo han
+
+
+Update class facbeook
+Update ham likeUnlikeFanPage			
+
+fix o doan add param:
+this.req.AddParam("href", this.http.urlEncode(fanpageLink));
+
+Them http.urlencode vao
+
+Da test va thanh cong my man. Tru truong hop bi loi~ do url co dau #
+Khang lam cai chuc nang likewebsite nay,loc domain ra nhe. Neu thang nao like website, ma domain lai la facebook thi skip thang tay
+
+
+Update class Gg.java
+Update ham isPlus
+
+Update 2 class: autogg va autofb
+______________
+09-03-2014
+tao thu muc vao file nhu the' nay, de hien plus button : Dropbox\lmkhang\Workspace\GUI\key\action_plus.lic
+them surf o likeviet. 
+them vai thanh progress.
+ham plus thi chua bit check viec plus hay chua o~ tren likeviet. vidu: neu la likevideo hay subscribe deu co link de check nhu: String siteCheck = "/system/modules/ylike/process.php";. Con Plus thi potay
+_________________________
+08-03-2014
+Update ham subscribeUnsubscribe trong class facebook
+// like Subscribe_UnSubscribe Facebook
+// Return -1 = rot mang; 0 = failed; 1 = thanh cong; 2 = tai khoan facebook bi xoa hoac facebook da update
+
+Update class LIkeViet
+
+Thêm hàm likeVietVideoID	: Hàm này đang viết dở dang. Cần lấy ra list videoID
+Dấu hiệu nhận biết
+<a class="followbutton" href="p.php?p=youtube&amp;vid=200">Watch Video</a>
+Lấy số 200
+//Ham get likeVietVideoID
+//return id cua video tren likeviet
+	
+Thêm hàm cheatTimeViewVideo	: Hàm này để cheat time Video video trên youtube.
+
+Thêm hàm verifyViewVideo	: Hàm này để kiếm điểm trên likeViet	
+___________
+
+19:50 06/03/2014
+install plugin: http://download.eclipse.org/efxclipse/updates-released/0.9.0/site
+________________________
+
+06-03-2014
+D:\Khang\Data\Dropbox\lmkhang\Workspace\GUI
+Chep toan bo ve
+vi co ca thu vien moi.
+________________________
+05-03-2014
+
+Chinh sua file Gg.java
+fix ham likeUnlikeYoutube
+Fix ham SubUnsub youtube
+________________________
+Dropbox\mrcas\Workspace\src gui\src
+dua 6 ham get info vao gui
+
+22:32 04/03/2014
+Dropbox\mrcas\Workspace\src gui
+fix multithread
