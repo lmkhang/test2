@@ -1,0 +1,36 @@
+Vinahost.vn
+nuria.f.llamas@gmail.com	KimLinh1807@
+
+
+Main IP: 50.2.98.21
+SSH Username:root
+SSH Password: T7h3Yh84tk
+SSH Port:22
+cái vps này
+
+mysql:
+
+thanhnguyen/thanhNH271188!
+
+5 * * * * /usr/bin/php /var/www/api.only4free.net/public_html/cron.php
+crontab -u oracle -l 5 * * * * /usr/bin/php /var/www/api.only4free.net/public_html/cron.php
+MySQL 5.5 database added.  Please make note of these credentials:  
+  
+       Root User: adminv9ZzZjE  
+   Root Password: JHr2yrNPjxFw  
+   Database Name: mycloud  
+  
+You can manage your new MySQL database by also embedding phpmyadmin.  
+The phpmyadmin username and password will be the same as the MySQL credentials above.  
+  
+To schedule your scripts to run on a periodic basis, add the scripts to   
+your application's .openshift/cron/{minutely,hourly,daily,weekly,monthly}/  
+directories (and commit and redeploy your application).  
+  
+Example: A script .openshift/cron/hourly/crony added to your application  
+         will be executed once every hour.  
+         Similarly, a script .openshift/cron/weekly/chronograph added  
+         to your application will be executed once every week. 
+git clone ssh://533b89d8e0b8cd3a41000e06@mycloud-oliverleo.rhcloud.com/~/git/mycloud.git/ 
+cd mycloud/ 
+mycloud-oliverleo.rhcloud.com

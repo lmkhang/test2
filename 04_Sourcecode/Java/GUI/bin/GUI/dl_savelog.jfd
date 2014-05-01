@@ -1,0 +1,92 @@
+JFDML JFormDesigner: "5.1.2.0.134" Java: "1.7.0_51" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class java.awt.GridBagLayout ) {
+			"$columnSpecs": "0:1.0"
+			"$rowSpecs": "48"
+			"$hGap": 5
+			"$vGap": 5
+			"$alignLeft": true
+			"$alignTop": true
+		} ) {
+			name: "this"
+			"title": "Save log"
+			"resizable": false
+			"modal": true
+			"defaultCloseOperation": 2
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+				"$columnSpecs": "48dlu:grow, labelcompgap, 92dlu:grow, labelcompgap, default:grow, labelcompgap, default:grow"
+				"$rowSpecs": "default:grow, linegap, default"
+			} ) {
+				name: "panel3"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label6"
+					"text": "Sheet Name"
+				}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+					"gridX": 1
+					"gridY": 1
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "txt_sheetname"
+				}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+					"gridX": 3
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "txt_rowB"
+					"model": new javax.swing.SpinnerNumberModel {
+						minimum: 0
+						value: 1
+					}
+					"toolTipText": "Row Begin"
+				}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+					"gridX": 5
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "txt_rowE"
+					"model": new javax.swing.SpinnerNumberModel {
+						minimum: 0
+						value: 1
+					}
+					"toolTipText": "Row End"
+				}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+					"gridX": 7
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btn_Savelog"
+					"text": "Save"
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btn_Savelog", true ) )
+				}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+					"gridY": 3
+					"hAlign": sfield com.jgoodies.forms.layout.CellConstraints LEFT
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "txt_colB"
+					"model": new javax.swing.SpinnerNumberModel {
+						minimum: 0
+						value: 1
+					}
+					"toolTipText": "Column Begin"
+				}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+					"gridX": 5
+					"gridY": 3
+				} )
+				add( new FormComponent( "javax.swing.JSpinner" ) {
+					name: "txt_colE"
+					"model": new javax.swing.SpinnerNumberModel {
+						minimum: 0
+						value: 999
+					}
+					"toolTipText": "Column End"
+				}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+					"gridX": 7
+					"gridY": 3
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 440, 85 )
+		} )
+	}
+}

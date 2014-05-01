@@ -1,0 +1,608 @@
+JFDML JFormDesigner: "5.1.2.0.134" Java: "1.7.0_51" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		auxiliary() {
+			"JavaCodeGenerator.defaultVariableModifiers": 1
+		}
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+			"$columnSpecs": "default:grow"
+			"$rowSpecs": "top:43dlu, linegap, 31dlu, linegap, 138dlu, linegap, default:grow, linegap, default"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			"title": "Auto Like for Facebook - Google site"
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "thisWindowClosing", true ) )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				"border": &EtchedBorder0 new javax.swing.border.EtchedBorder( 1, null, null )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+					"$columnSpecs": "default, labelcompgap, 98dlu:grow"
+					"$rowSpecs": "18dlu:grow, linegap, 15dlu:grow"
+				} ) {
+					name: "panel2"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label18"
+						"text": "Refer link"
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"vAlign": sfield com.jgoodies.forms.layout.CellConstraints TOP
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "txt_referlink"
+						"editable": false
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"gridX": 3
+						"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+						"vAlign": sfield com.jgoodies.forms.layout.CellConstraints TOP
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label14"
+						"text": "Bonus Remain"
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"vAlign": sfield com.jgoodies.forms.layout.CellConstraints TOP
+						"gridY": 3
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lb_bonusremain"
+					}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+						"gridX": 3
+						"vAlign": sfield com.jgoodies.forms.layout.CellConstraints TOP
+						"gridY": 3
+					} )
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				"border": #EtchedBorder0
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "72, left:102, 95, 88:1.0"
+					"$rowSpecs": "20, 0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "panel1"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "labcoin"
+						"text": "Coin"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label15"
+						"text": "Current Click"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label16"
+						"text": "Total Refer"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label17"
+						"text": "Remain Click"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 3
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lb_coin"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lb_currentclick"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lb_totalrefer"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lb_remainclick"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 3
+						"gridy": 1
+					} )
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 3
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+			} )
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabs"
+				"tabLayoutPolicy": 1
+				addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "tabsStateChanged", true ) )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "138, 0:1.0"
+					"$rowSpecs": "31, 31, 0:1.0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "tab_lv"
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "txt_usernamelv"
+						"toolTipText": "Tên đăng nhập"
+						"border": new javax.swing.border.TitledBorder( "Username" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+					add( new FormComponent( "javax.swing.JPasswordField" ) {
+						name: "txt_passwordlv"
+						"toolTipText": "Mật khẩu"
+						"border": new javax.swing.border.TitledBorder( "Password" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+					} )
+					add( new FormComponent( "javax.swing.JToggleButton" ) {
+						name: "btn_loginlv"
+						"selectedIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/login.png" )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/login.png" )
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"contentAreaFilled": false
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btn_loginlv", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lb_statuslv"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 1
+						"vAlign": 5
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "0:1.0"
+						"$rowSpecs": "0:1.0"
+						"$hGap": 5
+						"$vGap": 5
+						"$alignLeft": true
+						"$alignTop": true
+					} ) {
+						name: "pn_lv_action"
+						"visible": false
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btn_lv_surf"
+							"text": "Surf"
+							"horizontalAlignment": 2
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"contentAreaFilled": false
+							"cursor": &Cursor0 new java.awt.Cursor( 12 )
+							"foreground": new java.awt.Color( 0, 153, 255, 255 )
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btn_lv_surf", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"hAlign": 2
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 2
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/lv_tab.png" )
+					"disabledIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/lv_tab.png" )
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "138, 0:1.0"
+					"$rowSpecs": "31, 31, 34"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "tab_fb"
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "txt_usernamefb"
+						"border": new javax.swing.border.TitledBorder( "Username" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+					add( new FormComponent( "javax.swing.JPasswordField" ) {
+						name: "txt_passwordfb"
+						"border": new javax.swing.border.TitledBorder( "Password" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+					} )
+					add( new FormComponent( "javax.swing.JToggleButton" ) {
+						name: "btn_loginfb"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/login.png" )
+						"selectedIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/login.png" )
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"contentAreaFilled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_loginfb", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 1
+						"vAlign": 5
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lb_statusfb"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 1
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+						"$columnSpecs": "default:grow"
+						"$rowSpecs": "default:grow"
+					} ) {
+						name: "panel3"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 2
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+						"$columnSpecs": "default, labelcompgap, default, labelcompgap, default, labelcompgap, default, labelcompgap, default"
+						"$rowSpecs": "default:grow"
+					} ) {
+						name: "pn_fb_action"
+						"autoscrolls": true
+						"visible": false
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btn_fb_fanpage"
+							"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"contentAreaFilled": false
+							"toolTipText": "Like Fanpage"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"text": "Fanpage"
+							"foreground": new java.awt.Color( 0, 102, 255, 255 )
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_fb_fanpage", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btn_fb_website"
+							"text": "Website"
+							"foreground": new java.awt.Color( 0, 102, 255, 255 )
+							"toolTipText": "Website"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"contentAreaFilled": false
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btn_fb_website", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"gridX": 3
+							"gridY": 1
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btn_fb_photo"
+							"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"contentAreaFilled": false
+							"toolTipText": "Like Photo"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"foreground": new java.awt.Color( 0, 102, 255, 255 )
+							"text": "Photo"
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_fb_photo", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+							"gridX": 5
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btn_fb_follow"
+							"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"contentAreaFilled": false
+							"toolTipText": "Follow"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"foreground": new java.awt.Color( 0, 102, 255, 255 )
+							"text": "Follow"
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_fb_follow", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+							"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+							"gridX": 7
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btn_fb_share"
+							"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"contentAreaFilled": false
+							"toolTipText": "Share on Facebook"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"foreground": new java.awt.Color( 0, 102, 255, 255 )
+							"text": "Share on Facebook"
+							"cursor": #Cursor0
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_fb_share", true ) )
+						}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+							"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+							"gridX": 9
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 2
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"disabledIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/fb_tab.png" )
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/fb_tab.png" )
+					"enabled": false
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "138, 0:1.0"
+					"$rowSpecs": "31, 31, 0"
+					"$hGap": 5
+					"$vGap": 5
+					"$alignLeft": true
+					"$alignTop": true
+				} ) {
+					name: "tab_gg"
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "txt_usernamegg"
+						"border": new javax.swing.border.TitledBorder( "Username" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+					add( new FormComponent( "javax.swing.JPasswordField" ) {
+						name: "txt_passwordgg"
+						"border": new javax.swing.border.TitledBorder( "Password" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+					} )
+					add( new FormComponent( "javax.swing.JToggleButton" ) {
+						name: "btn_logingg"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/login.png" )
+						"selectedIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/login.png" )
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"contentAreaFilled": false
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_logingg", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lb_statusgg"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 1
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+						"$columnSpecs": "0, 0, 0, 0"
+						"$rowSpecs": "0"
+						"$hGap": 5
+						"$vGap": 5
+						"$alignLeft": true
+						"$alignTop": true
+					} ) {
+						name: "pn_gg_action"
+						"visible": false
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btn_likevideo"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/likevideo.png" )
+							"selectedIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/likevideo.png" )
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"contentAreaFilled": false
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "likevideoyou", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+						add( new FormComponent( "javax.swing.JToggleButton" ) {
+							name: "btn_subscribeyou"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/subcribe.png" )
+							"selectedIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/subcribe.png" )
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"contentAreaFilled": false
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_subscribeyou", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 1
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btn_gg_plus"
+							"contentAreaFilled": false
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/gg_plus.png" )
+							"selectedIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/gg_plus.png" )
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btn_gg_plus", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 2
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btn_gg_view"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"contentAreaFilled": false
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/movie.png" )
+							"selectedIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/movie.png" )
+							addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btn_gg_view", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+							"gridx": 3
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 2
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/gg_tab.png" )
+					"disabledIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/gg_tab.png" )
+					"enabled": false
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "313, 0:1.0"
+					"$rowSpecs": "0:1.0, 0:1.0, top:0:1.0"
+					"$hGap": 1
+					"$vGap": 1
+					"$alignTop": true
+					"$alignLeft": true
+				} ) {
+					name: "tab_register"
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "txt_res_username"
+						"focusLostBehavior": 0
+						"border": new javax.swing.border.TitledBorder( "Username" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "txt_res_password"
+						"focusLostBehavior": 0
+						"border": new javax.swing.border.TitledBorder( "Password" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "img_res_captcha"
+						"icon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"border": new javax.swing.border.TitledBorder( "Captcha" )
+						"autoscrolls": true
+						"opaque": true
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "captcha_reload", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 1
+					} )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "txt_res_captcha"
+						"focusLostBehavior": 0
+						"border": new javax.swing.border.TitledBorder( "Fill captcha" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 1
+						"gridx": 1
+					} )
+					add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+						name: "txt_res_email"
+						"focusLostBehavior": 0
+						"border": new javax.swing.border.TitledBorder( "Email" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 2
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "btn_register"
+						"text": "Register"
+						"border": new javax.swing.border.EmptyBorder( 5, 5, 5, 5 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btn_registerActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridy": 2
+						"hAlign": 0
+						"gridx": 1
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Đăng ký"
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridY": 5
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "pn_webview"
+				"border": #EtchedBorder0
+				"autoscrolls": true
+				"doubleBuffered": true
+				"focusCycleRoot": true
+				"focusTraversalPolicyProvider": true
+				"inheritsPopupMenu": true
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 7
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+				"$columnSpecs": "63, 0:1.0"
+				"$rowSpecs": "0:1.0"
+				"$hGap": 5
+				"$vGap": 5
+				"$alignLeft": true
+				"$alignTop": true
+			} ) {
+				name: "panel8"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label7"
+					"text": "Status"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lb_status"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+					"gridx": 1
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 9
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar1"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu1"
+					"text": "Setting"
+					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+						name: "menu4"
+						"text": "Save Accounts"
+						add( new FormComponent( "javax.swing.JCheckBoxMenuItem" ) {
+							name: "mn_lv"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/lv.png" )
+							"accelerator": static javax.swing.KeyStroke getKeyStroke( 81, 650, false )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "mn_lvSave", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JCheckBoxMenuItem" ) {
+							name: "mn_fb"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/fb.png" )
+							"accelerator": static javax.swing.KeyStroke getKeyStroke( 87, 650, false )
+							"selectedIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/fb.png" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "mn_fbSave", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JCheckBoxMenuItem" ) {
+							name: "mn_gg"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/gg.png" )
+							"accelerator": static javax.swing.KeyStroke getKeyStroke( 69, 650, false )
+							"selectedIcon": new com.jformdesigner.model.SwingIcon( 0, "/outsrc/images/gg.png" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "mn_ggSave", true ) )
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JCheckBoxMenuItem" ) {
+						name: "mn_autoSkip"
+						"text": "Auto Skip"
+						"toolTipText": "[Table Log] Skip if the record appears error"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "save_AutoSkip", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu2"
+					"text": "Tool"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "mn_sendmail"
+						"text": "Send Mail"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 77, 130, false )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "mn_sendmailActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "mn_vlog"
+						"text": "View Log"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 76, 130, false )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "viewlog", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "mn_slog"
+						"text": "Save Log"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 83, 130, false )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "showSaveLog", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu3"
+					"text": "Help"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem1"
+						"text": "Welcome"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem4"
+						"text": "Help Contents"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 72, 130, false )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem3"
+						"text": "Check Updates"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 67, 130, false )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem2"
+						"text": "About"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 65, 130, false )
+					} )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btn_showreferrals"
+					"text": "Show Refferals"
+					"contentAreaFilled": false
+					"focusPainted": false
+					"border": sfield com.jgoodies.forms.factories.Borders DIALOG_BORDER
+					"enabled": false
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "btn_showreferrals", true ) )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 10, 15 )
+			"size": new java.awt.Dimension( 525, 565 )
+		} )
+	}
+}

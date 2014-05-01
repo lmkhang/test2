@@ -1,0 +1,23 @@
+13-04-2014
+
+Copy project LikeViet => abclike.com
+Fix class LikeViet.java de tuong thich tren he thong likeaz
+Luu y, site nay su dung port 443 nen toan bo verify 2nd step phai doi sang port 443. 
+
+
+Fix ham
+getBonus
+getCurrentClick
+getCurrentCoin
+getRemainClick
+getRefferalLink
+getTotalRefferer
+timeBonusRemaining
+getIdSurf
+surfNow
+
+Fix class LikeViet.java
+Verify 1 va 2
+Ham register	: Form lam them khung nhap ho va ten, va loai tai khoan
+
+Update Class getLinkFan_Photo: Vi site nay no fix moi trang 1 kieu pattern nen phai fix lai

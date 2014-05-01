@@ -1,0 +1,16 @@
+15-04-2014
+
+Copy project LikeViet => abclike.com
+Fix class LikeViet.java de tuong thich tren he thong abclike.com
+Chua viet ham Get Email Account
+
+
+Fix ham
+getBonus
+getCurrentClick
+getCurrentCoin
+getRemainClick
+getRefferalLink
+getTotalRefferer
+timeBonusRemaining
+verifyViewVideo

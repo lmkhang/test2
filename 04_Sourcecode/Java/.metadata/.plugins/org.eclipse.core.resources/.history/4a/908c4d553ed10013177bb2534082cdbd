@@ -1,0 +1,473 @@
+package Thread;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+import org.openxmlformats.schemas.wordprocessingml.x2006.main.SettingsDocument;
+
+import Configs.Message;
+import Configs.Setting;
+import GUI.gui;
+import Models.Gg;
+import Models.Likeviet;
+import Utils.Utils;
+
+public class autogg extends Thread {
+	private gui main;
+	private List<HashMap<String, String>> sites;
+	private List<HashMap<Integer, String>> sites2;
+	private String type = "";
+	private int index;
+	private int total = 0;
+	private progress pb = null;
+	private List<String> errorLinks = new ArrayList<>();
+	private List<String> errorLinks2 = new ArrayList<>();
+	private String subject = "[LikeViet] Has the problem.";
+	private String subjectGG = "[Google] Has the problem.";
+	private String content = "[LikeViet] Has the problem.\r\n.Error Links: \r\n";
+	private String contentGG = "[Google] Has the problem.\r\n.Error Links: \r\n";
+
+	public autogg(Object obj, String type, int index) {
+		// TODO Auto-generated constructor stub
+		this.main = (gui) obj;
+		this.type = type;
+		this.index = index;
+
+	}
+
+	@Override
+	public void run() {
+		if(Setting.flagAdsense >Setting.numberAdv){
+			this.main.showMessageError("Advertise",  Message.adsense);
+			return;
+		}
+		
+		// TODO Auto-generated method stub
+		if (this.type.equalsIgnoreCase("likevideo")) {
+			this.likeVideo();
+		} else if (this.type.equalsIgnoreCase("subcribeyou")) {
+			this.subcribeYou();
+		} else if (this.type.equalsIgnoreCase("plus")) {
+			this.plus();
+		} else if (this.type.equalsIgnoreCase("view")) {
+			this.view();
+		}
+	}
+
+	private void view() {
+		// TODO Auto-generated method stub
+		this.main.getMain().btn_gg_view.setEnabled(false);
+		Likeviet lv = null;
+		try {
+			lv = Setting.lv.clone();
+			lv.setCookieDir(lv.domain);
+			lv.addViewFB(this.main);
+			
+//			lv.setUserAgent(Setting.listUserAgent().get(this.index));
+			this.main.getNet().addObserver(lv);
+			// System.out.println(lv.isLogin());
+			// init
+			int error = 0;
+			while (true) {
+				// likeviet-get site
+				this.sites2 = lv.getLikeVietVideoId();
+				// System.out.println(this.sites2.size());
+				this.total = this.sites2.size();
+				if (this.total == 0) {
+					if (this.pb != null) {
+						this.pb.stop();
+						this.pb = null;
+					}
+					break;
+				}
+				int start = 0;
+				if (this.pb != null) {
+					this.pb.stop();
+					this.pb = null;
+				}
+				this.pb = new progress(this.total, this.main.getDialog().pb_8,
+						this.type);
+				pb.start();
+//				lv.verifyViewVideo(String.valueOf(2),
+//						"25A7VGlupyQ");
+				for (HashMap<Integer, String> site : this.sites2) {
+					for (Integer id : site.keySet()) {
+						start++;
+						int row = this.main.addRecord(String.valueOf(id),
+								this.type, site.get(id), "Unkown", "");
+						lv.setRow(row);
+						lv.setTrying(0);
+						System.out.println(String.valueOf(id) + ", "
+								+ site.get(id));
+						int rs = lv.verifyViewVideo(String.valueOf(id));
+						if (rs == 0) {
+							this.main.updateRecord(row, 5,
+									"Đã view hoặc LikeViet đã update");
+//
+//							// this.main.updateRecord(row, 6, "Skip");
+							// this.errorLinks2.add(site.get(id));
+							error++;
+							this.errorLinks.add(site.get(id));
+							if (error == Setting.limitError) {
+//								// this.main.getMain().popupSendmail(subject,
+//								// this.getErrorLinks());
+								error = 0;
+							}
+						} else if (rs == -1) {
+							this.main.updateRecord(row, 5, "Network die");
+						} else {
+							this.main.updateRecord(row, 5, "Success");
+							this.main.updateRecord(row, 4, String.valueOf(rs));
+						}
+
+						this.setCurrentCoin();
+						this.pb.setCurrent(start);
+					}
+				}
+
+			}
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.main.getNet().removeObserver(Setting.lv);
+		this.main.getMain().btn_gg_view.setEnabled(true);
+		lv.setNull("", "");
+	}
+
+	private void plus() {
+		// TODO Auto-generated method stub
+		this.main.getMain().btn_gg_plus.setEnabled(false);
+		Likeviet lv = null;
+		try {
+			lv = Setting.lv.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Gg gg = null;
+		try {
+			gg = Setting.gg.clone();
+			gg.setCookieDir("");// set other place for cookie
+			gg.addViewFB(this.main);
+			gg.setUserAgent(Setting.listUserAgent().get(this.index));
+			this.main.getNet().addObserver(gg);
+
+			// init
+			String link = "/p.php?p=google";
+			String siteCheck = "/system/modules/google/process.php";
+			String refer = link;
+
+			int error = 0, error2 = 0;
+			while (true) {
+				// likeviet-get site
+				this.sites = lv.getPlusLink(link);
+				this.total = this.sites.size();
+				if (this.total == 0) {
+					if (this.pb != null) {
+						this.pb.stop();
+						this.pb = null;
+					}
+					break;
+				}
+				int start = 0;
+				if (this.pb != null) {
+					this.pb.stop();
+					this.pb = null;
+				}
+				this.pb = new progress(this.total, this.main.getDialog().pb_6,
+						this.type);
+				pb.start();
+				this.process(sites, start, gg, error, error2, siteCheck, refer,
+						lv);
+
+			}
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.main.getNet().removeObserver(gg);
+		this.main.getMain().btn_gg_plus.setEnabled(true);
+		gg.setNull("", "");
+	}
+
+	private void subcribeYou() {
+		// TODO Auto-generated method stub
+		this.main.getMain().btn_subscribeyou.setEnabled(false);
+		Likeviet lv = null;
+		try {
+			lv = Setting.lv.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Gg gg = null;
+		try {
+			gg = Setting.gg.clone();
+			gg.setCookieDir("");// set other place for cookie
+			gg.addViewFB(this.main);
+			gg.setUserAgent(Setting.listUserAgent().get(this.index));
+			this.main.getNet().addObserver(gg);
+
+			// init
+			String link = "/p.php?p=ysub";
+			String siteCheck = "/system/modules/ysub/process.php";
+			String refer = link;
+
+			int error = 0, error2 = 0;
+			while (true) {
+				// likeviet-get site
+				this.sites = lv.getLinkFan_Photo(link);
+				this.total = this.sites.size();
+				if (this.total == 0) {
+					if (this.pb != null) {
+						this.pb.stop();
+						this.pb = null;
+					}
+					break;
+				}
+				int start = 0;
+				if (this.pb != null) {
+					this.pb.stop();
+					this.pb = null;
+				}
+				this.pb = new progress(this.total, this.main.getDialog().pb_7,
+						this.type);
+				pb.start();
+				this.process(sites, start, gg, error, error2, siteCheck, refer,
+						lv);
+
+			}
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.main.getNet().removeObserver(gg);
+		this.main.getMain().btn_subscribeyou.setEnabled(true);
+		gg.setNull("", "");
+	}
+
+	private void likeVideo() {
+		this.main.getMain().btn_likevideo.setEnabled(false);
+		Likeviet lv = null;
+		try {
+			lv = Setting.lv.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Gg gg = null;
+		try {
+			gg = Setting.gg.clone();
+			gg.setCookieDir("");// set other place for cookie
+			gg.addViewFB(this.main);
+			gg.setUserAgent(Setting.listUserAgent().get(this.index));
+			this.main.getNet().addObserver(gg);
+
+			// init
+			String link = "/p.php?p=ylike";
+			String siteCheck = "/system/modules/ylike/process.php";
+			String refer = link;
+
+			int error = 0, error2 = 0;
+			while (true) {
+				// likeviet-get site
+				this.sites = lv.getLinkFan_Photo(link);
+				this.total = this.sites.size();
+				if (this.total == 0) {
+					if (this.pb != null) {
+						this.pb.stop();
+						this.pb = null;
+					}
+					break;
+				}
+				int start = 0;
+				if (this.pb != null) {
+					this.pb.stop();
+					this.pb = null;
+				}
+				this.pb = new progress(this.total, this.main.getDialog().pb_6,
+						this.type);
+				pb.start();
+				this.process(sites, start, gg, error, error2, siteCheck, refer,
+						lv);
+
+			}
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.main.getNet().removeObserver(gg);
+		this.main.getMain().btn_likevideo.setEnabled(true);
+		gg.setNull("", "");
+	}
+
+	private void process(List<HashMap<String, String>> sites, int start, Gg gg,
+			int error, int error2, String siteCheck, String refer, Likeviet lv) {
+		for (HashMap<String, String> site : sites) {
+			start++;
+			boolean is = false;
+			switch (this.type) {
+			case "likevideo":
+				is = gg.isLikeAlready(site.get("link"));
+				break;
+			case "subcribeyou":
+				is = gg.isSubcriseAlready(site.get("link"));
+				break;
+			case "plus":
+				is = gg.isPlus(site.get("link"));
+				break;
+			default:
+				break;
+			}
+
+			int row = this.main.addRecord(site.get("id"), this.type,
+					site.get("link"), site.get("coin"), "");
+			gg.setRow(row);
+			gg.setTrying(0);
+			int rsUn = 1;
+			if (is == true) {
+				this.main.updateRecord(row, 5, "Starting Unlike");
+
+				switch (this.type) {
+				case "likevideo":
+					rsUn = gg.likeUnlike(site.get("link"), false);
+					break;
+				case "subcribeyou":
+					rsUn = gg.subscribeUnSubscribe(site.get("link"), false);
+					break;
+				case "plus":
+					rsUn = gg.plusUnplus(site.get("link"), false);
+					
+					break;
+				default:
+					break;
+				}
+
+				if (rsUn == -1) {
+					this.main.updateRecord(row, 6,
+							"Skip. Network or Link problem.");
+					this.skip(row, site.get("id"), "Network or Link problem.");
+					this.main.updateRecord(row, 5, "Network or Link problem.");
+
+				} else if (rsUn == 0) {
+					this.main.updateRecord(row, 6, "Skip. Lỗi (Google Update)");
+					this.skip(row, site.get("id"), "Lỗi (Google Update)");
+
+					// this.main.updateRecord(row, 6, "Skip");
+					this.errorLinks2.add(site.get("link"));
+					error2++;
+					if (error2 == Setting.limitError) {
+						this.main.getMain().popupSendmail(subjectGG,
+								this.getErrorLinks2());
+					}
+				}
+				this.main.updateRecord(row, 5, "Unlike Success");
+			}
+			if (rsUn == 1) {
+				int rs = 1;
+				
+				if (!this.type.equals("plus")) {
+					// verify1
+					lv.verifyFirst(siteCheck, refer, site.get("link"),
+							site.get("id"), false);
+
+					this.main.updateRecord(row, 5, "Not Like");
+
+					switch (this.type) {
+					case "likevideo":
+						rs = gg.likeUnlike(site.get("link"), true);
+						break;
+					case "subcribeyou":
+						rs = gg.subscribeUnSubscribe(site.get("link"), true);
+						break;
+					default:
+						break;
+					}
+				} else {
+					rs = 1;
+				}
+
+				if (rs == -1) {
+					this.main.updateRecord(row, 6,
+							"Skip. Network or Link problem.");
+					this.skip(row, site.get("id"), "Network or Link problem.");
+					this.main.updateRecord(row, 5, "Network or Link problem.");
+				} else if (rs == 1) {
+					// verify2
+					boolean vf2 = false;
+					if (!this.type.equals("plus")) {
+						vf2 = lv.verifySecond(siteCheck, refer, site.get("id"));
+					} else {
+						vf2 = lv.verifySecondGooglePlus(site.get("id"));
+					}
+					if (!vf2) {
+						this.main.updateRecord(row, 6, "Skip. Lỗi");
+						this.skip(row, site.get("id"), "Lỗi");
+
+						// this.main.updateRecord(row, 6, "Skip");
+						this.errorLinks.add(site.get("link"));
+						error++;
+						if (error == Setting.limitError) {
+							this.main.getMain().popupSendmail(subject,
+									this.getErrorLinks());
+							error = 0;
+						}
+					} else {
+						this.main.updateRecord(row, 5, "Like Success");
+						this.setCurrentCoin();
+					}
+				} else if (rs == 0) {
+					this.main.updateRecord(row, 6, "Skip. Lỗi (Google Update)");
+					this.skip(row, site.get("id"), "Lỗi (Google Update)");
+
+					// this.main.updateRecord(row, 6, "Skip");
+					this.errorLinks2.add(site.get("link"));
+					error2++;
+					if (error2 == Setting.limitError) {
+						this.main.getMain().popupSendmail(subjectGG,
+								this.getErrorLinks2());
+						error2 = 0;
+					}
+				}
+			}
+			this.pb.setCurrent(start);
+
+		}
+	}
+
+	private void setCurrentCoin() {
+		this.main.getMain().lb_coin.setText(Setting.lv.getCurrentCoin());
+	}
+
+	private String getErrorLinks() {
+		String str = "";
+		for (String string : this.errorLinks) {
+			str += string + "\r\n";
+		}
+		this.content += str;
+		return this.content;
+	}
+
+	private String getErrorLinks2() {
+		String str = "";
+		for (String string : this.errorLinks2) {
+			str += string + "\r\n";
+		}
+		this.contentGG += str;
+		return this.contentGG;
+	}
+
+	private void skip(int row, String id, String strError) {
+		String value = Utils.readXML(Setting.settingFileName, "tableLog",
+				"skip", "value");
+		if (value.equals("1")) {
+			skip s = new skip(this.main, this.type, row, id);
+			s.start();
+			this.main.updateRecord(row, 5, strError);
+		}
+	}
+}

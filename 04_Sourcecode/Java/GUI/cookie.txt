@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cookies>
+    <cookie key=".google.com,/,NID" v="0" expire="Sun, 07-Sep-2014 17:26:32 GMT">
+        <NID>67=vFI28IDQrIepECjbMJ0jpRxCr-FuCCeZyVKi5dqfZBTBmaHCQy_J6N53vsgtTzdFgzL0NnsKBW0IvyKmC_qUfECLWfrW8MyG1iQSo3wqEjKMFYCc2TrGuwGlGUic2_-O</NID>
+    </cookie>
+    <cookie key="plus.google.com,/,GAPS" v="0" expire="Mon, 07-Mar-2016 17:26:34 GMT" secure="yes">
+        <GAPS>1:8LKAsEXag9Ag6EyVpptfo4hwcV7m5A:GPRksAYL7NUtdwoU</GAPS>
+    </cookie>
+    <cookie key="plus.google.com,/,GALX" v="0" secure="yes">
+        <GALX>2TC9mdNjlFc</GALX>
+    </cookie>
+    <cookie key="accounts.google.com,/,GAPS" v="0" expire="Mon, 07-Mar-2016 17:26:34 GMT" secure="yes">
+        <GAPS>1:_2fDI46cthuMmfnt9n7DB5nceIxq2g:0iyOUBjtv0Olm4YI</GAPS>
+    </cookie>
+    <cookie key="accounts.google.com,/,GALX" v="0" secure="yes">
+        <GALX>8hxqB6rbUs8</GALX>
+    </cookie>
+</cookies>

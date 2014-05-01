@@ -1,0 +1,19 @@
+13-04-2014
+
+Copy project LikeViet => like-ex.com
+Fix class LikeViet.java de tuong thich tren he thong likeaz
+
+
+Fix ham
+getBonus
+getCurrentClick
+getCurrentCoin
+getRemainClick
+getRefferalLink
+getTotalRefferer
+timeBonusRemaining
+getIdSurf
+surfNow
+
+Luu y:
+Site nay khong co phan like website

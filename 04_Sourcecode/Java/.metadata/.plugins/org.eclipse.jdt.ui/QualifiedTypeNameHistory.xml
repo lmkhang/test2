@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="GUI.main"/>
+<fullyQualifiedTypeName name="GUI.browser"/>
+<fullyQualifiedTypeName name="Configs.Setting"/>
+<fullyQualifiedTypeName name="views.MainView"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.awt.Frame"/>
+<fullyQualifiedTypeName name="chrriis.dj.nativeswing.swtimpl.components.WebBrowserWindowFactory"/>
+<fullyQualifiedTypeName name="chrriis.dj.nativeswing.swtimpl.components.JWebBrowserWindow"/>
+<fullyQualifiedTypeName name="chrriis.dj.nativeswing.swtimpl.components.JWebBrowser"/>
+<fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+</qualifiedTypeNameHistroy>

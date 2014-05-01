@@ -1,0 +1,132 @@
+
+>>> FOUND ERROR at 2014-04-06 13:33:45 <<<
+		Heading: 404 Page Not Found
+		Message: The page you requested was not found.
+		Error code: error_404
+		Error number: 404
+		Server info: array (
+  'MIBDIRS' => 'D:/xampp/php/extras/mibs',
+  'MYSQL_HOME' => '\\xampp\\mysql\\bin',
+  'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf',
+  'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php',
+  'PHPRC' => '\\xampp\\php',
+  'TMP' => '\\xampp\\tmp',
+  'HTTP_HOST' => 'auto.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'CONTENT_LENGTH' => '322',
+  'HTTP_CACHE_CONTROL' => 'no-cache',
+  'HTTP_ORIGIN' => 'chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1825.4 Safari/537.36',
+  'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary5dZMmd2uudttrW5o',
+  'HTTP_ACCEPT' => '*/*',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'vi-VN,vi;q=0.8,fr-FR;q=0.6,fr;q=0.4,en-US;q=0.2,en;q=0.2',
+  'HTTP_COOKIE' => 'PHPSESSID=a9akaev137rf42dch28itgkc61',
+  'PATH' => 'D:\\xampp\\php;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Java\\jdk1.8.0\\bin\\;C:\\Program Files (x86)\\Bitvise SSH Client;D:\\xampp\\php;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\Windows\\appdata\\local\\scoop\\shims;C:\\Users\\Windows\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\GnuWin32\\bin;',
+  'SystemRoot' => 'C:\\Windows',
+  'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe',
+  'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC',
+  'WINDIR' => 'C:\\Windows',
+  'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.3 Server at auto.com Port 80</address>
+',
+  'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.3',
+  'SERVER_NAME' => 'auto.com',
+  'SERVER_ADDR' => '127.0.0.1',
+  'SERVER_PORT' => '80',
+  'REMOTE_ADDR' => '127.0.0.1',
+  'DOCUMENT_ROOT' => 'D:/xampp/htdocs/auto',
+  'REQUEST_SCHEME' => 'http',
+  'CONTEXT_PREFIX' => '',
+  'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/auto',
+  'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com',
+  'SCRIPT_FILENAME' => 'D:/xampp/htdocs/auto/index.php',
+  'REMOTE_PORT' => '49512',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'REQUEST_METHOD' => 'POST',
+  'QUERY_STRING' => '',
+  'REQUEST_URI' => '/index.php/link_liked',
+  'SCRIPT_NAME' => '/index.php',
+  'PATH_INFO' => '/link_liked',
+  'PATH_TRANSLATED' => 'D:\\xampp\\htdocs\\auto\\link_liked',
+  'PHP_SELF' => '/index.php/link_liked',
+  'REQUEST_TIME_FLOAT' => 1396784025.327,
+  'REQUEST_TIME' => 1396784025,
+)
+		Request info: array (
+  'status' => '1',
+  'userid' => '1',
+  'id' => '1',
+)
+		Post value: array (
+  'status' => '1',
+  'userid' => '1',
+  'id' => '1',
+)
+>>> END ERROR at 2014-04-06 13:33:45 <<<
+
+>>> FOUND ERROR at 2014-04-06 13:41:52 <<<
+		Heading: 404 Page Not Found
+		Message: The page you requested was not found.
+		Error code: error_404
+		Error number: 404
+		Server info: array (
+  'MIBDIRS' => 'D:/xampp/php/extras/mibs',
+  'MYSQL_HOME' => '\\xampp\\mysql\\bin',
+  'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf',
+  'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php',
+  'PHPRC' => '\\xampp\\php',
+  'TMP' => '\\xampp\\tmp',
+  'HTTP_HOST' => 'auto.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'CONTENT_LENGTH' => '322',
+  'HTTP_CACHE_CONTROL' => 'no-cache',
+  'HTTP_ORIGIN' => 'chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1825.4 Safari/537.36',
+  'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarymGS1U0WtzWiqlVBG',
+  'HTTP_ACCEPT' => '*/*',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'vi-VN,vi;q=0.8,fr-FR;q=0.6,fr;q=0.4,en-US;q=0.2,en;q=0.2',
+  'HTTP_COOKIE' => 'PHPSESSID=a9akaev137rf42dch28itgkc61',
+  'PATH' => 'D:\\xampp\\php;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Java\\jdk1.8.0\\bin\\;C:\\Program Files (x86)\\Bitvise SSH Client;D:\\xampp\\php;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Users\\Windows\\appdata\\local\\scoop\\shims;C:\\Users\\Windows\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\GnuWin32\\bin;',
+  'SystemRoot' => 'C:\\Windows',
+  'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe',
+  'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC',
+  'WINDIR' => 'C:\\Windows',
+  'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.3 Server at auto.com Port 80</address>
+',
+  'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.3',
+  'SERVER_NAME' => 'auto.com',
+  'SERVER_ADDR' => '127.0.0.1',
+  'SERVER_PORT' => '80',
+  'REMOTE_ADDR' => '127.0.0.1',
+  'DOCUMENT_ROOT' => 'D:/xampp/htdocs/auto',
+  'REQUEST_SCHEME' => 'http',
+  'CONTEXT_PREFIX' => '',
+  'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/auto',
+  'SERVER_ADMIN' => 'webmaster@dummy-host2.example.com',
+  'SCRIPT_FILENAME' => 'D:/xampp/htdocs/auto/index.php',
+  'REMOTE_PORT' => '49540',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'REQUEST_METHOD' => 'POST',
+  'QUERY_STRING' => '',
+  'REQUEST_URI' => '/index.php/link_liked/liked',
+  'SCRIPT_NAME' => '/index.php',
+  'PATH_INFO' => '/link_liked/liked',
+  'PATH_TRANSLATED' => 'D:\\xampp\\htdocs\\auto\\link_liked\\liked',
+  'PHP_SELF' => '/index.php/link_liked/liked',
+  'REQUEST_TIME_FLOAT' => 1396784512.083,
+  'REQUEST_TIME' => 1396784512,
+)
+		Request info: array (
+  'status' => '1',
+  'userid' => '1',
+  'id' => '1',
+)
+		Post value: array (
+  'status' => '1',
+  'userid' => '1',
+  'id' => '1',
+)
+>>> END ERROR at 2014-04-06 13:41:52 <<<
